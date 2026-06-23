@@ -1,0 +1,85 @@
+/* Waybar base colors */
+@define-color bg-window #1a1a1a;        /* Neutral dark, lets purples pop */
+@define-color bg-input #1f1f1f;
+ 
+/* Waybar border = passive (#8f00ff) */
+@define-color border-window #8f00ff;
+@define-color border-input #6600ff;       /* Active as secondary outline */
+ 
+/* Text */
+@define-color text-main #c77dff;         /* Soft lavender */
+@define-color text-input #ffffff;
+
+/* Selected = Waybar active (#6600ff) */
+@define-color accent-bg #6600ff;
+@define-color accent-text #ffffff;
+
+/* Hover/secondary = Waybar passive (#8f00ff) */
+@define-color passive-bg #8f00ff;
+
+/* Global Styles */
+* {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+/* ==========================================================
+   THE ENGINE
+   ========================================================== */
+window {
+    margin: 0px;
+    border: 2px solid @border-window;
+    background-color: @bg-window;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 14px;
+}
+ 
+#input {
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid @border-input;
+    color: @text-input;
+    background-color: @bg-input;
+    border-radius: 4px;
+    outline: none;
+}
+ 
+#input:focus {
+    border-color: @accent-bg;   /* Shifts to active when typing */
+}
+
+#inner-box,
+#outer-box,
+#scroll {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+ 
+#inner-box {
+
+    margin: 5px 15px 15px 15px;
+}
+ 
+#text {
+    margin: 5px;
+    border: none;
+    color: @text-main;
+}
+ 
+#entry {
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.1s ease;
+}
+ 
+#entry:hover {
+    background-color: rgba(143, 0, 255, 0.15);   /* passive glow */
+}
+
+#entry:selected {
+    background-color: @accent-bg;   /* active solid */
+    outline: none;
+}
+ 
+#entry:selected #text {
+    color: @accent-text;

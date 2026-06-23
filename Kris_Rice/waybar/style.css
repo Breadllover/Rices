@@ -1,0 +1,139 @@
+/* ========================================================= */
+/* CHANGE YOUR COLORS HERE                                   */
+/* ========================================================= */
+
+@define-color bg-color       rgba(40, 42, 54, 0.100); /* Main bar background at 30% */
+@define-color bg-alt         rgba(40, 42, 54, 0.01); 
+@define-color text-color     #8f00ff; 
+@define-color accent-1       #8f00ff; 
+@define-color accent-2       #6600ff; 
+
+/* ========================================================= */
+/* WAYBAR BASE STYLING                                       */
+/* ========================================================= */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg-color;
+    color: @text-color;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* ========================================================= */
+/* WORKSPACES STYLING                                        */
+/* ========================================================= */
+
+#workspaces button {
+    padding: 0 10px;
+    color: @text-color;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: @bg-alt;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.focused {
+    background: transparent;
+    color: @accent-2; /* This changes the active text to cyan, no ugly box! */
+}
+
+/* ========================================================= */
+/* GENERAL MODULES STYLING                                   */
+/* ========================================================= */
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray {
+    padding: 0 15px;
+    margin: 4px 4px;
+    background-color: @bg-alt;
+    border-radius: 8px;
+    color: @text-color;
+}
+
+#clock {
+    color: @accent-2;
+}
+
+#pulseaudio {
+    color: @accent-1;
+}
+
+#battery.warning {
+    color: @bg-color;
+    background-color: @alert-color;
+}
+
+#battery.critical {
+    color: @bg-color;
+    background-color: @alert-color;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @text-color;
+        color: @alert-color;
+    }
+}
+
+/* ========================================================= */
+/* EXTRA "UNIXPORN" MODULE STYLES                            */
+/* ========================================================= */
+
+#custom-launcher {
+    color: @accent-2;
+    font-size: 18px;
+    padding: 0 10px;
+    margin: 4px 4px;
+}
+
+#window {
+    color: @text-color;
+    padding: 0 10px;
+}
+
+#cpu {
+    padding: 0 15px;
+    margin: 4px 4px;
+    background-color: @bg-alt;
+    border-radius: 8px;
+    color: #ffb86c; /* Orange */
+}
+
+#memory {
+    padding: 0 15px;
+    margin: 4px 4px;
+    background-color: @bg-alt;
+    border-radius: 8px;
+    color: #ff79c6; /* Pink */
+}
+
+#bluetooth {
+    padding: 0 15px;
+    margin: 4px 4px;
+    background-color: @bg-alt;
+    border-radius: 8px;
+    color: @accent-2;
+}
+
+#bluetooth.connected {
+    color: @accent-1;
+}
