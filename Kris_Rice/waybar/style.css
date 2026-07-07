@@ -65,7 +65,7 @@ window#waybar {
 }
 
 #clock {
-    color: @accent-2;
+    color: @accent-1;
 }
 
 #pulseaudio {
@@ -99,7 +99,7 @@ window#waybar {
 /* ========================================================= */
 
 #custom-launcher {
-    color: @accent-2;
+    color: @accent-1;
     font-size: 18px;
     padding: 0 10px;
     margin: 4px 4px;
@@ -131,7 +131,7 @@ window#waybar {
     margin: 4px 4px;
     background-color: @bg-alt;
     border-radius: 8px;
-    color: @accent-2;
+    color: @accent-1;
 }
 
 #bluetooth.connected {
